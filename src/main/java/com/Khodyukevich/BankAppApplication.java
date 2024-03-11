@@ -1,4 +1,4 @@
-package com.Khodyukevich.BankApp;
+package com.Khodyukevich;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
