@@ -19,13 +19,14 @@ import static com.Khodyukevich.constants.Errors.WRONG_USER_ID;
 public class ClientServiceImpl implements ClientService {
 
     private final ClientStorage clientStorage;
-    private final UUIDService service;
 
     @Override
     public ClientDto createClient(NewClientDto newClientDto) {
-        Client client = clientStorage.save(ClientMapper.makeClient(service.createId(), newClientDto));
+        UUID uuid = UUIDService.createId();
+        Client client = ClientMapper.makeClient(uuid, newClientDto);
+        Client client1 = clientStorage.save(client);
 
-        return ClientMapper.makeClientDto(client);
+        return ClientMapper.makeClientDto(client1);
     }
 
     @Override

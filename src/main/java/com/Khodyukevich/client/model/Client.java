@@ -2,10 +2,7 @@ package com.Khodyukevich.client.model;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.UUID;
 
 @Entity
@@ -14,11 +11,14 @@ import java.util.UUID;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "clients")
 public class Client {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "uuid")
     private UUID uuid;
+    @Column(name = "full_name")
     private String fullName;
+    @Column(name = "phone_number")
     private String phoneNumber;
     private String email;
     private Long passport;

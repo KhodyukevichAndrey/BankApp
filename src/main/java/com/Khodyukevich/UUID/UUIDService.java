@@ -1,12 +1,10 @@
 package com.Khodyukevich.UUID;
 
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
+import lombok.experimental.UtilityClass;
 
 import java.util.UUID;
 
-@Service
-@RequiredArgsConstructor
+@UtilityClass
 public class UUIDService {
 
     public UUID createId() {

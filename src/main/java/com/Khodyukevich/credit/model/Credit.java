@@ -2,10 +2,11 @@ package com.Khodyukevich.credit.model;
 
 import lombok.*;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import java.util.UUID;
 
 @Entity
 @Getter
@@ -13,10 +14,12 @@ import javax.persistence.Id;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "credits")
 public class Credit {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long uuid;
-    private long creditLimit;
-    private double interestRate;
+    private UUID uuid;
+    @Column(name = "credit_limit")
+    private Long creditLimit;
+    @Column(name = "interest_rate")
+    private Double interestRate;
 }
